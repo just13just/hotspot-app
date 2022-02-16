@@ -4,12 +4,12 @@ const slides: Array<CarouselItemData> = [
   {
     title: 'hotspot_setup.education.cards.0.title',
     desc: 'hotspot_setup.education.cards.0.subtitle',
-    image: require('../../../assets/images/hotspot-setup1.png'),
+    image: require('../../../assets/images/hotspot-setup1.jpeg'),
   },
   {
     title: 'hotspot_setup.education.cards.1.title',
     desc: 'hotspot_setup.education.cards.1.subtitle',
-    image: require('../../../assets/images/hotspot-setup2.png'),
+    image: require('../../../assets/images/hotspot-setup2.jpeg'),
   },
   {
     title: 'hotspot_setup.education.cards.2.title',

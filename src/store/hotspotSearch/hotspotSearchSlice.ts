@@ -5,7 +5,7 @@ import { uniqBy } from 'lodash'
 import Fuse from 'fuse.js'
 import { HotspotsSliceState } from '../hotspots/hotspotsSlice'
 import { searchHotspots, searchValidators } from '../../utils/appDataClient'
-import { PlacePrediction } from '../../utils/googlePlaces'
+import { getCities, PlacePrediction } from '../../utils/googlePlaces'
 
 export const HotspotSearchFilterKeys = ['all_hotspots', 'my_hotspots'] as const
 export type HotspotSearchFilterType = typeof HotspotSearchFilterKeys[number]
@@ -43,7 +43,10 @@ export const fetchData = createAsyncThunk<
     const {
       hotspots: { hotspots, followedHotspots },
     } = getState() as { hotspots: HotspotsSliceState }
-    const unique = uniqBy([...hotspots, ...followedHotspots], (h) => h.address)
+    const unique = uniqBy(
+      [...hotspots.data, ...followedHotspots.data],
+      (h) => h.address,
+    )
     if (!searchTerm) {
       return unique
     }
@@ -61,7 +64,7 @@ export const fetchData = createAsyncThunk<
   // Note: City search was removed because google is expensive
   // TODO: Bring back city search when the helium api adds geography to it
   // https://api.helium.io/v1/cities?search=chicago
-  // const locations = await getCities(searchTerm)
+  const locations = await getCities(searchTerm)
 
   let hotspots: Hotspot[] = []
   let validators: Validator[] = []
@@ -71,18 +74,11 @@ export const fetchData = createAsyncThunk<
     // Fetch hotspots from helium js
     validators = await searchValidators(searchTerm)
   }
-  const sortedResults = new Fuse(
-    [
-      // ...locations,
-      ...hotspots,
-      ...validators,
-    ],
-    {
-      keys: ['name', 'description'],
-      shouldSort: true,
-      threshold: 1.0, // We're not filtering anything out - just sorting by match score
-    },
-  )
+  const sortedResults = new Fuse([...locations, ...hotspots, ...validators], {
+    keys: ['name', 'description'],
+    shouldSort: true,
+    threshold: 1.0, // We're not filtering anything out - just sorting by match score
+  })
     .search(searchTerm)
     .map(({ item }) => item)
 

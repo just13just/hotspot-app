@@ -16,9 +16,9 @@ export default {
   ],
   account_setup: {
     welcome: {
-      title: 'Welcome\nto Helium',
+      title: 'Welcome\nto Nebra',
       subtitle:
-        'Host a Hotspot and earn <b><purple>$HNT</purple></b>,\na new cryptocurrency,\nfor building The People’s Network.',
+        'Host a Nebra and earn <b><purple>$HNT</purple></b>,\na new cryptocurrency,\nfor building the Helium Network.',
       create_account: 'Create an Account',
       import_account: 'Import Existing Account',
     },
@@ -32,8 +32,8 @@ export default {
     passphrase: {
       title: 'Your 12 Word\nPassword',
       subtitle:
-        'It is crucial you <b>write all of these\n12 words down, in order</b>.\n\n<red>Helium cannot recover these words.</red>',
-      warning: 'Helium cannot recover these words',
+        'It is crucial you <b>write all of these\n12 words down, in order</b>.\n\n<red>Nebra cannot recover these words.</red>',
+      warning: 'Nebra cannot recover these words',
       next: 'I have written these down',
     },
     confirm: {
@@ -329,7 +329,7 @@ export default {
       support_answer:
         'Data Credits are required to send data over the Helium Network.',
       error:
-        'Cannot proceed with Add Hotspot. If you purchased the Hotspot from Helium, please contact support@helium.com and include mac address {{mac}}',
+        'Cannot proceed with Add Hotspot. If you purchased the Hotspot from Nebra, please contact support@nebra.com and include mac address {{mac}}',
       back: 'Back to Hotspot Pairing',
       wait_error_title: 'Please Try Again',
       wait_error_body:
@@ -661,7 +661,7 @@ export default {
         'Try typing a Hotspot or Validator Name (e.g. silly-animal-name) or a place name (e.g. New York City).\n\nNote: Hotspots and Validators added within the last 10 minutes may not appear.',
     },
     empty: {
-      title: 'Add a\nHelium Miner',
+      title: 'Add a\nNebra Miner',
       body: 'There are two types of miner\non the Helium Network:',
       search: 'Search',
       info: 'Info',
@@ -957,14 +957,13 @@ export default {
     picker_title: 'Past',
     overview: 'Earnings',
     no_location: 'No Location',
-    picker_options: { 7: '7D', 14: '14D', 30: '30D', YTD: 'YTD' },
+    picker_options: ['7D', '14D', '30D'],
     picker_prompt: 'Select Range',
     status_data_only: 'Data-Only',
     status_online: 'Online',
     status_offline: 'Needs Attention',
     status_syncing: 'Syncing',
     relayed: 'Relayed',
-    ytd: 'Your Hotspot has earned\n{{number}} HNT since {{date}}',
     status_prompt_online: {
       title: 'Hotspot is online and syncing.',
       subtitle_active: 'Status: Block {{hotspotBlock}} of {{currentBlock}}',
@@ -1240,11 +1239,6 @@ export default {
       title: 'Transmit Scaling',
       body:
         'Indicates location density. When a Hotspot transmits a beacon, any that hear it will have its mining rewards scaled by this number.',
-    },
-    earnings: {
-      title: 'Daily HNT Earnings (7D Avg)',
-      body:
-        'Compares Hotspot earnings in a hex with the average earnings of a Hotspot on the network.',
     },
     title: 'Map Filters',
     button: 'Choose Map Filter',

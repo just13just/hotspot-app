@@ -36,7 +36,7 @@ import Security from '../../../assets/images/security.svg'
 import Learn from '../../../assets/images/learn.svg'
 import Account from '../../../assets/images/account.svg'
 import Box from '../../../components/Box'
-import DiscordItem from './DiscordItem'
+// import DiscordItem from './DiscordItem'
 import AppInfoItem from './AppInfoItem'
 import DeployModeModal from './DeployModeModal'
 import activitySlice from '../../../store/activity/activitySlice'
@@ -352,7 +352,7 @@ const MoreScreen = () => {
             openUrl: Articles.Docs_Root,
           },
         ] as MoreListItemType[],
-        footer: <DiscordItem />,
+        // footer: <DiscordItem />,
       },
       {
         title: t('more.sections.app.title'),
