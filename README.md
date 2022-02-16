@@ -246,3 +246,19 @@ The latest version of Reactotron can be downloaded [here](https://github.com/inf
 ### **_React Native Debugger_**
 
 See [React Native Debugger](https://github.com/jhen0409/react-native-debugger)
+
+# Before all the above steps, you must make sure that:
+
+1. You have Expo CLI. In order to check this, you can enter the command in the terminal:
+
+```
+expo --version
+```
+
+- If the terminal returns an error, then install the Expo CLI. To do this, you need to enter in the terminal:
+
+```
+npm install --global expo-cli
+```
+
+2. Your environment variables are in the right place, because for me it's not .bash_profile but .zshrc - file, on your system the file may be named differently
